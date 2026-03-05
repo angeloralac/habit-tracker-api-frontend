@@ -136,3 +136,38 @@ Permite gestionar hábitos realizando operaciones CRUD:
 - Request GET 
 - Conexion a MongoDB Atlas
 
+# Habit Tracker API - Semana 3
+Actividad Unidad 2 – Programación Avanzada  
+Semana 3
+
+## Descripción del Proyecto
+
+En esta semana se trabajó el frontend en Next.js agregando TailwindCSS y construyendo una interfaz para mostrar los hábitos usando el estado global con Redux.
+
+---
+
+## Tecnologías agregadas
+
+- TailwindCSS
+- Diseño con componentes UI (cards/lista) usando Tailwind
+- Renderizado de lista dinámica desde Redux
+
+---
+
+## Ejecución del Proyecto
+
+
+## Frontend
+1. Entrar en la carpeta frontend
+2. Instalar dependencias
+3. Ejecutar el servidor
+
+---
+
+## Funcionalidades Implementadas
+
+- Integración de TailwindCSS en Next.js
+- Lista dinámica de hábitos desde Redux
+- Barra de progreso (estática por ahora)
+- Botón “Done” (sin funcionalidad por ahora)
+
