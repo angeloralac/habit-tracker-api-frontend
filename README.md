@@ -171,3 +171,33 @@ En esta semana se trabajó el frontend en Next.js agregando TailwindCSS y constr
 - Barra de progreso (estática por ahora)
 - Botón “Done” (sin funcionalidad por ahora)
 
+# Habit Tracker API - Semana 4
+## Actividad Unidad 4 – Programación Avanzada
+### Semana 4
+
+## Descripción del Proyecto
+En esta semana se trabajó el frontend en Next.js conectándolo con el backend para mostrar hábitos reales desde la base de datos. Además, se implementó la funcionalidad del botón “Done” para marcar hábitos como completados y una barra de progreso dinámica que cambia según el avance diario.
+
+## Tecnologías agregadas
+- Next.js
+- TailwindCSS
+- Redux Toolkit
+- Fetch API
+- Conexión con backend en Express
+
+## Ejecución del Proyecto
+### Frontend
+1. Entrar en la carpeta `frontend`
+2. Instalar dependencias con `npm install`
+3. Ejecutar el proyecto con `npm run dev`
+4. Abrir en navegador `http://localhost:3000`
+
+## Funcionalidades Implementadas
+- Consumo de hábitos desde el backend
+- Lista dinámica de hábitos
+- Botón “Done” funcional
+- Actualización automática de hábitos al marcar uno
+- Barra de progreso dinámica
+- Cambio de color en la barra según avance
+- Visualización de racha por hábito
+- Mensaje si el hábito ya fue marcado el mismo día
