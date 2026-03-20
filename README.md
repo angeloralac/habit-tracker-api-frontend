@@ -201,3 +201,33 @@ En esta semana se trabajó el frontend en Next.js conectándolo con el backend p
 - Cambio de color en la barra según avance
 - Visualización de racha por hábito
 - Mensaje si el hábito ya fue marcado el mismo día
+
+# Habit Tracker Frontend - Semana 5
+
+## Actividad Unidad 5 – Programación Avanzada  
+## Semana 5
+
+## Descripción del Proyecto
+En esta semana se trabajó el frontend del proyecto Habit Tracker en Next.js, integrando el registro e inicio de sesión de usuarios, así como el envío del token JWT al backend para permitir la creación de hábitos autenticados desde la interfaz.
+
+## Tecnologías agregadas
+- Next.js
+- React
+- Redux Toolkit
+- cookies-next
+
+## Ejecución del Proyecto
+
+### Frontend
+1. Entrar en la carpeta `frontend`
+2. Instalar dependencias con `npm install`
+3. Ejecutar el proyecto con `npm run dev`
+
+## Funcionalidades Implementadas
+- Registro de usuario desde el frontend
+- Login de usuario desde el frontend - usuario: angelo - contraseña: 1
+- Almacenamiento del token JWT
+- Envío del token JWT al backend
+- Formulario para agregar hábitos autenticados
+- Visualización de hábitos en pantalla
+- Marcado de hábitos como completados
