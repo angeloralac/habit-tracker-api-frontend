@@ -9,6 +9,8 @@ export default function Home() {
   const dispatch = useDispatch();
   const habits = useSelector((state) => state.habits.habits);
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5050";
+
   const [token, setToken] = useState("");
 
   const [registerName, setRegisterName] = useState("");
@@ -20,30 +22,47 @@ export default function Home() {
   const [habitName, setHabitName] = useState("");
   const [habitDescription, setHabitDescription] = useState("");
 
-  const fetchHabits = async () => {
-    try {
-      const res = await fetch("http://localhost:5050/api/habits");
-      const data = await res.json();
-      dispatch(setHabits(data));
-    } catch (err) {
-      console.error("Error al obtener hábitos:", err);
-    }
-  };
+ const fetchHabits = async (currentToken) => {
+  try {
+    const authToken = currentToken || token;
 
-  useEffect(() => {
+    if (!authToken) {
+      dispatch(setHabits([]));
+      return;
+    }
+
+    const res = await fetch("https://habit-tracker-api-backend.vercel.app/api/habits", {
+      headers: {
+        Authorization: `Bearer ${authToken}`,
+      },
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      alert(data.message || data.error || "No se pudieron obtener los hábitos");
+      return;
+    }
+
+    dispatch(setHabits(data));
+  } catch (err) {
+    console.error("Error al obtener hábitos:", err);
+  }
+};
+
+ useEffect(() => {
+  const savedToken = getCookie("token");
+  if (savedToken) {
+    setToken(savedToken);
     fetchHabits();
-
-    const savedToken = getCookie("token");
-    if (savedToken) {
-      setToken(savedToken);
-    }
-  }, []);
+  }
+}, []);
 
   const handleRegister = async (e) => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5050/api/auth/register", {
+      const res = await fetch("https://habit-tracker-api-backend.vercel.app/api/auth/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -73,7 +92,7 @@ export default function Home() {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5050/api/auth/login", {
+      const res = await fetch("https://habit-tracker-api-backend.vercel.app/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -91,9 +110,10 @@ export default function Home() {
         return;
       }
 
-      setCookie("token", data.token);
-      setToken(data.token);
-      alert("Login correcto");
+   setToken(data.token);
+setCookie("token", data.token);
+fetchHabits(data.token);
+alert("Login exitoso");
 
       setLoginName("");
       setLoginPassword("");
@@ -111,7 +131,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch("http://localhost:5050/api/habits", {
+      const res = await fetch("https://habit-tracker-api-backend.vercel.app/api/habits", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -141,7 +161,7 @@ export default function Home() {
 
   const handleDone = async (id) => {
     try {
-      const res = await fetch(`http://localhost:5050/api/habits/${id}/done`, {
+      const res = await fetch(`https://habit-tracker-api-backend.vercel.app/api/habits/${id}/done`, {
         method: "PATCH",
       });
 
