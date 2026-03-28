@@ -231,3 +231,42 @@ En esta semana se trabajó el frontend del proyecto Habit Tracker en Next.js, in
 - Formulario para agregar hábitos autenticados
 - Visualización de hábitos en pantalla
 - Marcado de hábitos como completados
+
+
+# Habit Tracker API Frontend - Semana 6
+Actividad Unidad 6 – Programación Avanzada  
+Semana 6  
+
+## Descripción del Proyecto
+En esta semana se trabajó el despliegue del frontend del proyecto **Habit Tracker** utilizando **Vercel**. Además, se corrigió la conexión entre el frontend y el backend desplegado para que la aplicación pudiera consumir correctamente la API en producción.
+
+## Tecnologías agregadas
+- Next.js
+- React
+- Redux Toolkit
+- React Redux
+- cookies-next
+- Vercel
+
+## Ejecución del Proyecto
+
+### Frontend
+1. Entrar en la carpeta `frontend`
+2. Instalar dependencias con `npm install`
+3. Ejecutar el proyecto con `npm run dev`
+
+## Funcionalidades Implementadas
+- Despliegue del frontend en Vercel
+- Conexión del frontend con el backend desplegado en Vercel
+- Corrección de rutas `fetch` que antes apuntaban a `localhost`
+- Registro de usuarios desde la interfaz
+- Login de usuarios desde la interfaz
+- Visualización de hábitos desde la aplicación
+- Consumo de la API desplegada en producción
+
+## Enlace del Frontend
+https://habit-tracker-api-frontend.vercel.app
+
+## Resultado de la Semana
+Se logró desplegar correctamente el frontend en Vercel y conectarlo con el backend desplegado, permitiendo acceder a la aplicación desde un enlace público.
+
